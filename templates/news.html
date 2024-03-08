@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+<title>News</title>
+</head>
+<body>
+<h1>All news</h1>
+<ol>
+    {% for i in query %}
+        <li>
+            <h2>{{i.title}}</h2>
+            <p>{{i.description}}</p>
+            <p>{{i.publication_date}}</p>
+        </li>
+    {% endfor %}
+</ol>
+</body>
+</html>
