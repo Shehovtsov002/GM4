@@ -2,17 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8">
-<title>News</title>
+    <title>News</title>
 </head>
 <body>
 <h1>All news</h1>
 <ol>
     {% for i in query %}
-        <li>
-            <h2>{{i.title}}</h2>
-            <p>{{i.description}}</p>
-            <p>{{i.publication_date}}</p>
-        </li>
+    <li>
+        <img src="{{i.image.url}}" alt="" width="400" height="300">
+        <h2>{{i.title}}</h2>
+        <p>{{i.publication_date}}</p>
+        <a href="/blog/{{i.id}}">Details</a>
+        <hr>
+        <hr>
+        <hr>
+    </li>
     {% endfor %}
 </ol>
 </body>
