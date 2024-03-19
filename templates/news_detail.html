@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{query_id.title}}</title>
-</head>
-<body>
+{% include 'header_and_footer/header.html' %}
 <center>
     <h1>{{query_id.title}}</h1>
     <p>{{query_id.description}}</p>
@@ -19,5 +13,4 @@
     <p>{{query_id.price}}</p>
     <p>{{query_id.publication_date}}</p>
 </center>
-</body>
-</html>
+{% include 'header_and_footer/footer.html' %}

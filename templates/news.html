@@ -1,23 +1,17 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>News</title>
-</head>
-<body>
+{% include 'header_and_footer/header.html' %}
+
 <h1>All news</h1>
-<ol>
+<div class="row justify-content-md-center">
     {% for i in query %}
-    <li>
-        <img src="{{i.image.url}}" alt="" width="400" height="300">
-        <h2>{{i.title}}</h2>
-        <p>{{i.publication_date}}</p>
-        <a href="/blog/{{i.id}}">Details</a>
-        <hr>
-        <hr>
-        <hr>
-    </li>
+    <div class="card" style="width: 18rem; margin: 20px">
+        <img src="{{i.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{i.title}}</h5>
+            <p class="card-text">{{i.publication_date}}</p>
+            <a href="/blog/{{i.id}}" class="btn btn-primary">Details</a>
+        </div>
+    </div>
     {% endfor %}
-</ol>
-</body>
-</html>
+</div>
+
+{% include 'header_and_footer/footer.html' %}
