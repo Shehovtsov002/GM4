@@ -5,9 +5,17 @@
     <title>Answer</title>
 </head>
 <body>
+<form action="{% url 'search' %}" method="GET" role="search">
+    <input type="search" type="text" name="q" placeholder="Search" aria-label="Search">
+</form>
+
+<br><br><br>
+
 {% for i in answer %}
 <h1>{{i.name}}</h1>
 <button><a href="/answer_list/{{i.id}}">Подробнее</a></button>
 {% endfor %}
+<br><br><br>
+<button><a href="/create_answer/">Create</a></button>
 </body>
 </html>

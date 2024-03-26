@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class ItForum(models.Model):
@@ -12,3 +13,12 @@ class ItForum(models.Model):
     class Meta:
         verbose_name_plural = 'Вопросы про пайтон'
         verbose_name = 'Вопрос'
+
+
+class ReviewForum(models.Model):
+    name_correction = models.ForeignKey(ItForum, on_delete=models.CASCADE, related_name='correct')
+    text = models.TextField()
+    stars = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1), MaxValueValidator(10)])
+
+    def __str__(self):
+        return self.text
