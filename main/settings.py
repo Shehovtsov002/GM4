@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'blog',
     'it_forum',
     'parser',
+    'custom_users',
 ]
 
 MIDDLEWARE = [

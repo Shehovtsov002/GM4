@@ -40,4 +40,3 @@ def parsing():
         raise Exception('Ошибка при парсинге')
 
 
-print(parsing())

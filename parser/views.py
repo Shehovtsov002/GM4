@@ -26,9 +26,9 @@ class RezkaListView(generic.ListView):
 
 
 class ManasListView(generic.ListView):
-   template_name = 'parsers/manas_list.html'
-   model = models.ManasParser
-   context_object_name = 'manas'
+    template_name = 'parsers/manas_list.html'
+    model = models.ManasParser
+    context_object_name = 'manas'
 
-   def getqueryset(self):
-       return self.model.objects.all()
+    def getqueryset(self):
+        return self.model.objects.all()

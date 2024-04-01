@@ -1,0 +1,24 @@
+{% include 'header_and_footer/header.html' %}
+<h1>Friends List</h1>
+
+<ol>
+    {% for i in person %}
+    <li>
+        <h3><strong>Name: {{i.username}}</strong></h3>
+        <p>Email: {{i.email}}</p>
+        <p>Phone: {{i.phone}}</p>
+        <p>Gender: {{i.gender}}</p>
+        <p>F Name: {{i.first_name}}</p>
+        <p>L Name: {{i.last_name}}</p>
+    </li>
+    {% endfor %}
+</ol>
+
+<form action="{% url 'person:login' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">
+        Logout
+    </button>
+</form>
+
+{% include 'header_and_footer/footer.html' %}
