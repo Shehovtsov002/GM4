@@ -1,6 +1,5 @@
-from django.http import HttpResponse
 from it_forum.forms import ItForumForm
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from it_forum.models import ItForum
 from django.views import generic
 
@@ -46,7 +45,7 @@ class AnswerDeleteView(generic.DeleteView):
 class AnswerUpdateView(generic.UpdateView):
     template_name = 'crud/edit_answer.html'
     form_class = ItForumForm
-    success_url = '/answer_list/'
+    success_url = '/answer_list'
     model = ItForum
 
     def form_valid(self, form):

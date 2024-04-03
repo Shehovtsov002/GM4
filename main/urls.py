@@ -12,6 +12,7 @@ urlpatterns = [
     path('', include('it_forum.urls')),
     path('', include('parser.urls')),
     path('', include('custom_users.urls')),
+    path('', include('product.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

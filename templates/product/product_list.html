@@ -1,0 +1,21 @@
+{% include 'header_and_footer/header.html' %}
+
+<h1>All products</h1>
+<ul>
+    {% for i in product %}
+    <li>
+        <h2>{{i.title}}</h2>
+        {% for tag in i.tags.all %}
+            <p>
+                #{{tag.name}}
+            </p>
+        {% endfor %}
+    </li>
+    {% endfor %}
+</ul>
+
+<botton><a href="/all_food/">Food</a></botton>
+<botton><a href="">For House</a></botton>
+<botton><a href="">Electronic</a></botton>
+
+{% include 'header_and_footer/footer.html' %}
